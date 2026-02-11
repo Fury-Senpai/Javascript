@@ -59,7 +59,7 @@ const fetchData = new Promise(function(resolve , reject){
         fetch('https://jsonplaceholder.typicode.com/todos/1')
             .then(rawData => rawData.json())
             .then((data) => {
-                resolve(data)
+                return resolve(data)
             })
             .catch((error)=>{
                 reject(error)
