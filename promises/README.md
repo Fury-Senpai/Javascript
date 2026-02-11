@@ -1,2 +1,0 @@
-# Javascript
-programs in js
