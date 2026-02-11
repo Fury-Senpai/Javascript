@@ -50,5 +50,30 @@ newPrm
  })
 
 
+// fetch data from an API
+// resolve it if successful
+// else reject
 
+const fetchData = new Promise(function(resolve , reject){
+    setTimeout(() => {
+        fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(rawData => rawData.json())
+            .then((data) => {
+                resolve(data)
+            })
+            .catch((error)=>{
+                reject(error)
+            })
+    }, 3000);
+    
+
+})
+
+fetchData
+ .then((data)=>{
+    console.log('data fetched succesully',data);
+ })
+ .catch((error)=>{
+    console.log('data cannot be fetched',error);
+ })
 
